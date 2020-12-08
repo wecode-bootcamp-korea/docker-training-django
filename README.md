@@ -1,4 +1,4 @@
-# api_test
+# docker_train 
 
 - my_settings.py 파일을 생성해서 database 접속 정보를 입력해주세요.
 ```python
