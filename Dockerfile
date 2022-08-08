@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 ## Install packages
 # 현재 패키지 설치 정보를 도커 이미지에 복사
-COPY requirements.txt ./ 
+COPY requirements.txt . 
 # 설치정보를 읽어 들여서 패키지를 설치
 RUN pip install -r requirements.txt
 
@@ -19,4 +19,5 @@ COPY . .
 EXPOSE 8000   
 
 # gunicorn 사용해서 서버를 실행
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "docker_train.wsgi:application"]
+CMD ["python", "manage.py", "runserver", "0:8000"]
+# CMD ["gunicorn", "--bind", "0.0.0.0:8000", "docker_train.wsgi:application"]
